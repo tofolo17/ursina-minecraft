@@ -4,11 +4,11 @@ import matplotlib.pylab as plt
 from perlin_noise import PerlinNoise
 
 
-def generator():
-    noise = PerlinNoise(octaves=2, seed=randint(1, 9999))
+def generator(size, octave):
+    noise = PerlinNoise(octaves=octave, seed=randint(1, 9999))
 
-    x_pix, y_pix = 21, 21
-    noise_values = [[noise([i / x_pix, j / y_pix]) for j in range(x_pix)] for i in range(y_pix)]
+    x_pix = z_pix = size
+    noise_values = [[noise([i / x_pix, j / z_pix]) for j in range(x_pix)] for i in range(z_pix)]
 
     plt.imshow(noise_values, cmap='gray')
     plt.show()
