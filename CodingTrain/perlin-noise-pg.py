@@ -9,7 +9,7 @@ WHITE = pygame.Color(255, 255, 255)
 pygame.init()
 
 screen = pygame.display.set_mode((400, 400))
-pygame.display.set_caption('Random')
+pygame.display.set_caption("Perlin noise")
 
 noise = PerlinNoise(octaves=randint(1, 4), seed=randint(1, 9999))
 
