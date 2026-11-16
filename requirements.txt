@@ -1,0 +1,9 @@
+ursina
+perlin-noise
+opensimplex==0.3
+matplotlib
+pygame
+# notebook (CodingTrain/graphs.ipynb)
+notebook
+numpy
+scipy

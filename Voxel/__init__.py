@@ -7,12 +7,13 @@ class Voxel(Button):
             parent=scene,
             position=position,
             model='cube',
-            origin_y=.5,
+            origin_y=0.5,
             texture='white_cube',
-            color=color.color(0, 0, random.uniform(.9, 1.0)),
+            color=color.color(0, 0, random.uniform(0.9, 1.0)),
             highlight_color=color.lime,
         )
 
+    # Left click places a block on the hovered face; right click breaks it.
     def input(self, key):
         if self.hovered:
             if key == 'left mouse down':

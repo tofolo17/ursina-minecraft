@@ -34,7 +34,7 @@ def plains(x_input, y_input):
 
     def noise(x_axis, y_axis):
         value = (tmp.noise2d(x_axis / 3.0, y_axis / 3.0) + 1) / 2.0
-        value = value ** 0.25
+        value = value**0.25
         value = value - 0.6
         if value < 0:
             value = 0
@@ -54,6 +54,7 @@ def mountains(x_input, y_input):
     return noise(x_input, y_input)
 
 
+# Blends "mountains" and "plains" noise, weighted by an S-curve noise.
 def combined(x_input, y_input):
     m_values = mountains(x_input, y_input)
     p_values = plains(x_input, y_input)
@@ -66,5 +67,6 @@ def combined(x_input, y_input):
         return (p * w) + (m * (1 - w))
 
     return noise()
+
 
 # -------------------------------------------------------
